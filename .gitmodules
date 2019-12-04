@@ -1,0 +1,3 @@
+[submodule "assets/Datejs"]
+	path = assets/Datejs
+	url = https://github.com/datejs/Datejs.git

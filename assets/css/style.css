@@ -96,7 +96,7 @@ textarea{
 .saveBtn:hover {
   font-size: 25px;
   width: 115px;
-  transition: font-size .3s ease-in, width .3s ease-in;
+  transition: font-size .3s ease-in, width .3s ease-in-out;
   /* transition: width .3s ease-in; */
 }
 
