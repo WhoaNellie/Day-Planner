@@ -13,11 +13,11 @@ $(document).ready(function () {
     function genTable() {
 
         // why doesn't modulo deal with negatives
-        let hourCount = (((hour - 4) % 24) + 24) % 24;
+        let hourCount = (((hour - 3) % 24) + 24) % 24;
         console.log(hourCount);
         let timeStyle;
 
-        for (let i = -4; i < 8; i++) {
+        for (let i = -3; i < 9; i++) {
             let tr = $("<tr></tr>");
             $("#planner").append(tr);
 
