@@ -40,7 +40,6 @@ $(document).ready(function () {
                 timeStyle = "future";
             }
 
-            // set textarea value from local storage
             let txtArea = $("<textarea></textarea>").attr({
                 "id": i,
                 "class": timeStyle
