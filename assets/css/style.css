@@ -1,7 +1,7 @@
 body {
   font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-  line-height: 1;
+  font-size: 18px;
+  line-height: 1.2;
 }
 
 textarea{
@@ -46,16 +46,19 @@ textarea{
 .past {
   background-color: #d3d3d3;
   color: white;
+  border-bottom: white solid 1px;
 }
 
 .present {
   background-color: #ff6961;
-  color: white;
+  color: black;
+  border-bottom: white solid 1px;
 }
 
 .future {
   background-color: #77dd77;
-  color: white;
+  color: black;
+  border-bottom: white solid 1px;
 }
 
 .saveBtn {
@@ -65,31 +68,40 @@ textarea{
   border-bottom-right-radius: 15px;
   background-color: #06AED5;
   color: white;
-  height: 5vh;
-  padding: 2%;
+  height: calc(5vh + 8px);
+  margin-top: calc((-5vh - 7px) / 2);
+  width: 100px;
+  padding: 4%;
+  position: absolute;
+  top: 50%;
 }
 
-.saveBtn i:hover {
+.saveBtn:hover {
   font-size: 20px;
+  width: 115px;
   transition: all .3s ease-in-out;
 }
 
 .container{
-  padding-left: 5%;
+  margin-bottom: 8vh;
 }
 
 table{
-  width:70%; 
-  margin: 0 auto;
+  width:85%; 
+  /* margin: 0 auto; */
 }
 
 td:first-child, td:nth-child(2){
   padding: 2%;
-  height: 5vh;
+  max-height: 5vh;
 }
 
 td:first-child{
   width: 15%;
+}
+
+td:nth-child(3){
+  position: relative;
 }
 
 
