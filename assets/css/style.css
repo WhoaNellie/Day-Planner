@@ -59,7 +59,8 @@ textarea{
 }
 
 .saveBtn {
-  border-left: 1px solid black;
+  border: none;
+  border-left: 1px solid grey;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   background-color: #06AED5;
@@ -73,14 +74,22 @@ textarea{
   transition: all .3s ease-in-out;
 }
 
+.container{
+  padding-left: 5%;
+}
+
 table{
-  width: 75%;
+  width:70%; 
   margin: 0 auto;
 }
 
 td:first-child, td:nth-child(2){
   padding: 2%;
   height: 5vh;
+}
+
+td:first-child{
+  width: 15%;
 }
 
 

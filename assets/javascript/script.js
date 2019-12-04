@@ -2,15 +2,11 @@ $(document).ready(function () {
 
     let currDate = new Date();
 
-    let formDate = currDate.toString("dddd, MMMM dd, yyyy");
+    let formDate = currDate.toString("dddd, MMMM dS, yyyy");
 
     $("#currentDay").text(formDate);
 
     let hour = currDate.getHours(currDate);
-    console.log(typeof(currDate));
-    console.log(currDate);
-    console.log(hour);
-
 
 
     // generate table to show current day's schedule
@@ -64,7 +60,7 @@ $(document).ready(function () {
         }
     }
 
-
+    // find a way to do this with date.js?
     function formatTime(h) {
         let formTime = h;
         let amPM = " AM";
