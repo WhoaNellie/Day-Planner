@@ -13,7 +13,9 @@ $(document).ready(function () {
     // style past/current/future hours
     function genTable() {
 
-        let hourCount = (hour - 4) % 24;
+        // why doesn't modulo deal with negatives
+        let hourCount = (((hour - 4) % 24) + 24) % 24;
+        console.log(hourCount);
         let timeStyle;
 
         for (let i = 0; i < 12; i++) {
@@ -49,7 +51,7 @@ $(document).ready(function () {
 
             //add button w/ event listener
             let addCol = $("<td></td>");
-            let addButt = $("<button></button>").text("Edit Notes");
+            let addButt = $("<button></button>").text("Notes");
             addButt.attr({"class":"saveBtn"});
 
             tr.append(addCol);
@@ -61,6 +63,7 @@ $(document).ready(function () {
     }
 
     // find a way to do this with date.js?
+    // at midnight. time starts at -4 am > -3 > -2 > -1 > 12
     function formatTime(h) {
         let formTime = h;
         let amPM = " AM";
@@ -80,6 +83,8 @@ $(document).ready(function () {
     }
 
     genTable();
+
+
     // populate table with events saved to local storage
     function getNotes(){
         return "I am placeholder text";

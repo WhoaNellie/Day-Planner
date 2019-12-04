@@ -74,6 +74,7 @@ textarea{
   padding: 4%;
   position: absolute;
   top: 50%;
+  font-weight: bolder;
 }
 
 .saveBtn:hover {
@@ -88,12 +89,11 @@ textarea{
 
 table{
   width:85%; 
-  /* margin: 0 auto; */
 }
 
 td:first-child, td:nth-child(2){
   padding: 2%;
-  max-height: 5vh;
+  height: 5vh;
 }
 
 td:first-child{
