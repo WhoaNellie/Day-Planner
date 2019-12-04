@@ -8,20 +8,19 @@ $(document).ready(function () {
 
     let hour = currDate.getHours(currDate);
 
-
     // generate table to show current day's schedule
     function genTable() {
 
         // why doesn't modulo deal with negatives
         let hourCount = (((hour - 3) % 24) + 24) % 24;
-        console.log(hourCount);
-        let timeStyle;
 
         for (let i = -3; i < 9; i++) {
             let tr = $("<tr></tr>");
             $("#planner").append(tr);
 
             let timeTag = formatTime(hourCount);
+            let timeStyle;
+
 
             let timeCol = $("<td></td>").text(timeTag);
             timeCol.attr({
@@ -56,7 +55,7 @@ $(document).ready(function () {
             let addButt = $("<button></button>").text("Save");
             addButt.attr({
                 "class": "saveBtn",
-                "tied": i
+                "tiedTo": i
             });
 
             tr.append(addCol);
@@ -67,7 +66,7 @@ $(document).ready(function () {
         }
     }
 
-    // find a way to do this with date.js?
+
     function formatTime(h) {
         let formTime = h;
         let amPM = " AM";
@@ -104,7 +103,7 @@ $(document).ready(function () {
 
     // allow user to add events to local storage
     function addNotes() {
-        let select = $(this).attr("tied");
+        let select = $(this).attr("tiedTo");
 
         // is there a less jank way to do this?
         let note = $("#"+select).val();
