@@ -86,9 +86,6 @@ $(document).ready(function () {
         return formTime + amPM;
     }
 
-    genTable();
-
-
     // populate table with events saved to local storage
     function getNotes(i) {
 
@@ -124,6 +121,16 @@ $(document).ready(function () {
 
 
     // setTimeout() to update dynamically?
-
+    function startTimer() {
+        let now = new Date();
+        let minutes = now.getMinutes();
+        let seconds = now.getSeconds();
+        setTimeout(function(){
+            window.location.href = "index.html";
+        },((60 - minutes)*60 + (60 - seconds)) * 1000);
+    }
+    
+    genTable();
+    startTimer();
 
 });
