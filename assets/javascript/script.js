@@ -21,14 +21,13 @@ $(document).ready(function(){
             let td = $("<td></td>").text(timeTag);
             tr.append(td);
 
-            hourCount++;
-            console.log(i);
+            hourCount = (hourCount + 1) % 24;
+            console.log(i + " " + hourCount + " " + timeTag);
+
         }
     }
 
     
-    // convert 0-23 to X:XX XM format
-    // going to have to deal with 0:00 AM at some point
     function formatTime(h){
         let formTime = h;
         let amPM = " AM";
@@ -38,6 +37,10 @@ $(document).ready(function(){
             amPM = " PM";
         }else if (h < 12){
             amPM = " AM"
+        }
+
+        if(formTime == 0){
+            formTime = 12;
         }
 
         return formTime + amPM;
