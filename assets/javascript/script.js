@@ -91,12 +91,9 @@ $(document).ready(function () {
         let getDate = currDate.toString("ddMMyyyy");
 
         let getHour = Number(hour) + Number(i);
-        console.log(getHour + " " + i);
         getHour = ((((getHour) % 24) + 24) % 24);
-        console.log(getHour);
         
         let getID = JSON.stringify(getDate + getHour);
-        console.log(getID);
 
         return localStorage.getItem(getID);
     }
@@ -119,7 +116,7 @@ $(document).ready(function () {
     }
 
 
-    // setTimeout() to update dynamically?
+    // refresh on the hour
     function startTimer() {
         let now = new Date();
         let minutes = now.getMinutes();

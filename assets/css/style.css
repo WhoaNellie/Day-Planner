@@ -8,9 +8,6 @@ textarea{
   background: transparent;
   border: none;
   resize: none;
-  /* color: #000000; */
-  /* border-left: 1px solid black; */
-  /* padding: 10px; */
 }
 
 .jumbotron {
@@ -46,26 +43,21 @@ textarea{
 .past {
   background-color: #d3d3d3;
   color: white;
-  /* border-bottom: white solid 1px; */
 }
 
 .present {
   background-color: #ff6961;
   color: black;
-  /* border-bottom: white solid 1px; */
 }
 
 .future {
   background-color: #77dd77;
   color: black;
-  /* border-bottom: white solid 1px; */
 }
 
 
-/* HIDEOUS on small screen, fix this */
 textarea{
   width: 100%;
-  /* height: calc(5vh + 8px); */
   height: 60px;
   position: absolute;
   top: 50%;
@@ -75,7 +67,6 @@ textarea{
   border-bottom: white solid 2px;
 }
 
-/* add a save icon? */
 .saveBtn {
   border: none;
   border-bottom: white solid 2px;
@@ -83,7 +74,6 @@ textarea{
   border-bottom-right-radius: 15px;
   background-color: #06AED5;
   color: white;
-  /* height: calc(5vh + 8px); */
   height: 60px;
   margin-top: calc((-60px + 2px) / 2);
   width: 100px;
@@ -97,7 +87,6 @@ textarea{
   font-size: 25px;
   width: 115px;
   transition: font-size .3s ease-in, width .3s ease-in-out;
-  /* transition: width .3s ease-in; */
 }
 
 .saveBtn:active{
