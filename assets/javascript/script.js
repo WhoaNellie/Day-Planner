@@ -10,7 +10,6 @@ $(document).ready(function () {
 
 
     // generate table to show current day's schedule
-    // style past/current/future hours
     function genTable() {
 
         // why doesn't modulo deal with negatives
@@ -31,10 +30,6 @@ $(document).ready(function () {
 
             tr.append(timeCol);
 
-            // console.log(i + " " + hourCount + " " + timeTag);
-
-
-            // aparently these should be text fields and buttons should be save buttons
             let noteCol = $("<td></td>");
 
             if (i < 0) {
@@ -51,12 +46,13 @@ $(document).ready(function () {
                 "class": timeStyle
             });
 
+            txtArea.val(getNotes(i));
+
             hourCount = (hourCount + 1) % 24;
 
             tr.append(noteCol);
             noteCol.append(txtArea);
 
-            //add button w/ event listener
             let addCol = $("<td></td>");
             let addButt = $("<button></button>").text("Save");
             addButt.attr({
@@ -95,8 +91,19 @@ $(document).ready(function () {
 
 
     // populate table with events saved to local storage
-    function getNotes() {
-        // return "I am placeholder text";
+    function getNotes(i) {
+
+        let getDate = currDate.toString("ddMMyyyy");
+
+        let getHour = Number(hour) + Number(i);
+        console.log(getHour + " " + i);
+        getHour = ((((getHour) % 24) + 24) % 24);
+        console.log(getHour);
+        
+        let getID = JSON.stringify(getDate + getHour);
+        console.log(getID);
+
+        return localStorage.getItem(getID);
     }
 
     // allow user to add events to local storage
@@ -118,8 +125,6 @@ $(document).ready(function () {
 
 
     // setTimeout() to update dynamically?
-
-
 
 
 });
