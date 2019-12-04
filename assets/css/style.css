@@ -71,7 +71,7 @@ textarea{
   top: 50%;
   padding: 2%;
   margin-top: calc((-60px + 2px) / 2);
-  overflow: hidden;
+  overflow: auto;
   border-bottom: white solid 2px;
 }
 
