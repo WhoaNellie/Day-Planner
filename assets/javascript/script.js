@@ -2,14 +2,23 @@ $(document).ready(function () {
 
     let currDate = new Date();
 
+    let formDate = currDate.toString("dddd, MMMM dd, yyyy");
+
+    $("#currentDay").text(formDate);
+
     let hour = currDate.getHours(currDate);
+    console.log(typeof(currDate));
+    console.log(currDate);
     console.log(hour);
+
+
 
     // generate table to show current day's schedule
     // style past/current/future hours
     function genTable() {
 
         let hourCount = (hour - 4) % 24;
+        let timeStyle;
 
         for (let i = 0; i < 12; i++) {
             let tr = $("<tr></tr>").attr({
@@ -20,17 +29,33 @@ $(document).ready(function () {
             let timeTag = formatTime(hourCount);
 
             let timeCol = $("<td></td>").text(timeTag);
+            timeCol.attr({"class":"hour"});
+
             tr.append(timeCol);
 
-            hourCount = (hourCount + 1) % 24;
             // console.log(i + " " + hourCount + " " + timeTag);
 
             let noteCol = $("<td></td>").text(getNotes());
+            
+            if(i < 4){
+                timeStyle = "past";
+            }else if (i == 4){
+                timeStyle = "present";
+            }else{
+                timeStyle = "future";
+            }
+
+            noteCol.attr({"class":timeStyle});
+
+            hourCount = (hourCount + 1) % 24;
+
             tr.append(noteCol);
 
             //add button w/ event listener
             let addCol = $("<td></td>");
             let addButt = $("<button></button>").text("Edit Notes");
+            addButt.attr({"class":"saveBtn"});
+
             tr.append(addCol);
             addCol.append(addButt);
 

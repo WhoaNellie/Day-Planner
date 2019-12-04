@@ -40,6 +40,7 @@ textarea{
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
+  text-align: right;
 }
 
 .past {
@@ -63,9 +64,23 @@ textarea{
   border-bottom-right-radius: 15px;
   background-color: #06AED5;
   color: white;
+  height: 5vh;
+  padding: 2%;
 }
 
 .saveBtn i:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
 }
+
+table{
+  width: 75%;
+  margin: 0 auto;
+}
+
+td:first-child, td:nth-child(2){
+  padding: 2%;
+  height: 5vh;
+}
+
+
