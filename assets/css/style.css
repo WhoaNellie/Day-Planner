@@ -8,9 +8,9 @@ textarea{
   background: transparent;
   border: none;
   resize: none;
-  color: #000000;
-  border-left: 1px solid black;
-  padding: 10px;
+  /* color: #000000; */
+  /* border-left: 1px solid black; */
+  /* padding: 10px; */
 }
 
 .jumbotron {
@@ -61,6 +61,15 @@ textarea{
   border-bottom: white solid 1px;
 }
 
+textarea{
+  width: 100%;
+  height: calc(5vh + 8px);
+  position: absolute;
+  top: 50%;
+  
+  margin-top: calc((-5vh - 7px) / 2);
+}
+
 .saveBtn {
   border: none;
   border-left: 1px solid grey;
@@ -85,13 +94,15 @@ textarea{
 
 .container{
   margin-bottom: 8vh;
+  width: auto;
 }
 
 table{
-  width:85%; 
+  width:85%;
+  margin: 0 auto;
 }
 
-td:first-child, td:nth-child(2){
+td:first-child{
   padding: 2%;
   height: 5vh;
 }
@@ -100,8 +111,12 @@ td:first-child{
   width: 15%;
 }
 
-td:nth-child(3){
+td:nth-child(3), td:nth-child(2){
   position: relative;
+}
+
+td:nth-child(3){
+  width: 100px;
 }
 
 

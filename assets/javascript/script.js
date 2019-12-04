@@ -19,9 +19,7 @@ $(document).ready(function () {
         let timeStyle;
 
         for (let i = 0; i < 12; i++) {
-            let tr = $("<tr></tr>").attr({
-                "id": i
-            });
+            let tr = $("<tr></tr>");
             $("#planner").append(tr);
 
             let timeTag = formatTime(hourCount);
@@ -33,7 +31,12 @@ $(document).ready(function () {
 
             // console.log(i + " " + hourCount + " " + timeTag);
 
-            let noteCol = $("<td></td>").text(getNotes());
+
+            // aparently these should be text fields and buttons should be save buttons
+            let noteCol = $("<td></td>");
+            let txtArea = $("<textarea></textarea>").attr({
+                "id": i
+            });
             
             if(i < 4){
                 timeStyle = "past";
@@ -43,15 +46,16 @@ $(document).ready(function () {
                 timeStyle = "future";
             }
 
-            noteCol.attr({"class":timeStyle});
+            txtArea.attr({"class":timeStyle});
 
             hourCount = (hourCount + 1) % 24;
 
             tr.append(noteCol);
+            noteCol.append(txtArea);
 
             //add button w/ event listener
             let addCol = $("<td></td>");
-            let addButt = $("<button></button>").text("Notes");
+            let addButt = $("<button></button>").text("Save");
             addButt.attr({"class":"saveBtn"});
 
             tr.append(addCol);
@@ -63,7 +67,6 @@ $(document).ready(function () {
     }
 
     // find a way to do this with date.js?
-    // at midnight. time starts at -4 am > -3 > -2 > -1 > 12
     function formatTime(h) {
         let formTime = h;
         let amPM = " AM";
@@ -87,7 +90,7 @@ $(document).ready(function () {
 
     // populate table with events saved to local storage
     function getNotes(){
-        return "I am placeholder text";
+        // return "I am placeholder text";
     }
 
     // allow user to add events to local storage
