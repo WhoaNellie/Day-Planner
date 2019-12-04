@@ -102,15 +102,18 @@ $(document).ready(function () {
     // allow user to add events to local storage
     function addNotes() {
         let select = $(this).attr("tied");
-        console.log(select);
 
         // is there a less jank way to do this?
         let note = $("#"+select).val();
-        console.log(note);
 
-        let noteID = hour - select;
+        let numDate = currDate.toString("ddMMyyyy");
+        let numHour = Number(hour) + Number(select);
+        numHour = ((((numHour) % 24) + 24) % 24);
 
-        localStorage.setItem(JSON.stringify(select), note);
+
+        let noteID = numDate + numHour;
+
+        localStorage.setItem(JSON.stringify(noteID), note);
     }
 
 
