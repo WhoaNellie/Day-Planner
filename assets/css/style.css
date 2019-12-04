@@ -46,19 +46,19 @@ textarea{
 .past {
   background-color: #d3d3d3;
   color: white;
-  border-bottom: white solid 1px;
+  /* border-bottom: white solid 1px; */
 }
 
 .present {
   background-color: #ff6961;
   color: black;
-  border-bottom: white solid 1px;
+  /* border-bottom: white solid 1px; */
 }
 
 .future {
   background-color: #77dd77;
   color: black;
-  border-bottom: white solid 1px;
+  /* border-bottom: white solid 1px; */
 }
 
 textarea{
@@ -66,19 +66,22 @@ textarea{
   height: calc(5vh + 8px);
   position: absolute;
   top: 50%;
+  padding: 2%;
+  margin-top: calc((-5vh - 2px) / 2);
   
-  margin-top: calc((-5vh - 7px) / 2);
+  border-bottom: white solid 4px;
 }
 
+/* add a save icon? */
 .saveBtn {
   border: none;
-  border-left: 1px solid grey;
+  border-bottom: white solid 2px;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   background-color: #06AED5;
   color: white;
-  height: calc(5vh + 8px);
-  margin-top: calc((-5vh - 7px) / 2);
+  height: calc(5vh + 6px);
+  margin-top: calc((-5vh - 2px) / 2);
   width: 100px;
   padding: 4%;
   position: absolute;
@@ -100,6 +103,7 @@ textarea{
 table{
   width:85%;
   margin: 0 auto;
+  border-collapse: separate;
 }
 
 td:first-child{
